@@ -1,0 +1,779 @@
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:"Segoe UI",Arial,sans-serif;
+
+}
+
+body{
+
+    position:relative;
+
+    background:#231349;
+
+}
+
+/*==================================================
+                FONDO
+==================================================*/
+
+.background{
+
+    position:absolute;
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at center bottom,
+        rgba(255,220,140,.65) 0%,
+        rgba(255,185,110,.35) 20%,
+        transparent 45%
+    ),
+
+    linear-gradient(
+
+        180deg,
+
+        #231349 0%,
+
+        #4b2e87 30%,
+
+        #8d5a86 58%,
+
+        #d98b68 82%,
+
+        #ffd59c 100%
+
+    );
+
+    z-index:0;
+
+}
+
+/*==================================================
+                ESTRELLAS
+==================================================*/
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 2px),
+    radial-gradient(#fff0c7 1px,transparent 2px),
+    radial-gradient(white 2px,transparent 3px);
+
+    background-size:
+
+    120px 120px,
+    180px 180px,
+    250px 250px;
+
+    opacity:.75;
+
+}
+
+/*==================================================
+                LUNA
+==================================================*/
+
+.moon{
+
+    position:absolute;
+
+    right:90px;
+
+    top:60px;
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    background:#fff8dc;
+
+    box-shadow:
+
+    0 0 25px #fff8d6,
+
+    0 0 60px rgba(255,250,200,.9);
+
+    animation:luna 5s ease-in-out infinite;
+
+    z-index:4;
+
+}
+
+@keyframes luna{
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/*==================================================
+                NUBES
+==================================================*/
+
+.cloud{
+
+    position:absolute;
+
+    height:55px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:100px;
+
+    filter:blur(1px);
+
+    z-index:3;
+
+}
+
+.cloud::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:inherit;
+
+    left:20px;
+    top:-22px;
+
+}
+
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:inherit;
+
+    right:18px;
+    top:-36px;
+
+}
+
+.cloud1{
+
+    width:180px;
+
+    top:90px;
+
+    left:-220px;
+
+    animation:nube1 42s linear infinite;
+
+}
+
+.cloud2{
+
+    width:240px;
+
+    top:170px;
+
+    left:-450px;
+
+    animation:nube2 60s linear infinite;
+
+}
+
+.cloud3{
+
+    width:130px;
+
+    top:260px;
+
+    left:-180px;
+
+    opacity:.10;
+
+    animation:nube3 80s linear infinite;
+
+}
+
+@keyframes nube1{
+
+to{
+
+transform:translateX(2200px);
+
+}
+
+}
+
+@keyframes nube2{
+
+to{
+
+transform:translateX(2500px);
+
+}
+
+}
+
+@keyframes nube3{
+
+to{
+
+transform:translateX(2400px);
+
+}
+
+}
+
+/*==================================================
+                SUELO
+==================================================*/
+
+.ground{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+
+    height:170px;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #72c35d,
+
+        #58a949,
+
+        #3f7d37
+
+    );
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+.ground::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:20px;
+
+    background:rgba(255,255,255,.14);
+
+}
+
+.ground::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        90deg,
+
+        rgba(255,255,255,.03) 0px,
+
+        rgba(255,255,255,.03) 3px,
+
+        transparent 3px,
+
+        transparent 12px
+
+    );
+
+    opacity:.35;
+
+}
+
+/*==================================================
+                FLORES
+==================================================*/
+
+.ground span{
+
+    position:absolute;
+
+    bottom:16px;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#ffd84a;
+
+    box-shadow:0 8px 0 #2b6d2d;
+
+}
+
+.ground span:nth-child(1){left:7%;}
+.ground span:nth-child(2){left:15%;}
+.ground span:nth-child(3){left:28%;}
+.ground span:nth-child(4){left:42%;}
+.ground span:nth-child(5){left:57%;}
+.ground span:nth-child(6){left:72%;}
+.ground span:nth-child(7){left:85%;}
+.ground span:nth-child(8){left:95%;}
+/*==================================================
+                ÁRBOL
+==================================================*/
+
+.tree-container{
+
+    position:absolute;
+
+    left:40px;
+    bottom:95px;
+
+    width:620px;
+    height:650px;
+
+    z-index:20;
+
+    transform-origin:bottom left;
+
+    transition:transform 1.2s ease;
+
+}
+
+body.zoom .tree-container{
+
+    transform:
+    translateX(130px)
+    translateY(35px)
+    scale(1.40);
+
+}
+
+#tree{
+
+    width:100%;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 20px 30px rgba(0,0,0,.28));
+
+}
+
+
+/*==================================================
+                MANGOS
+==================================================*/
+
+.mangos{
+
+    position:absolute;
+
+    left:40px;
+    bottom:95px;
+
+    width:620px;
+    height:650px;
+
+    z-index:30;
+
+    transform-origin:bottom left;
+
+    transition:transform 1.2s ease;
+
+}
+
+body.zoom .mangos{
+
+    transform:
+    translateX(130px)
+    translateY(35px)
+    scale(1.40);
+
+}
+
+.mango{
+
+    position:absolute;
+
+    width:48px;
+
+    cursor:pointer;
+
+    transform-origin:top center;
+
+    animation:balanceo 3s ease-in-out infinite;
+
+    transition:.25s;
+
+}
+
+.mango:hover{
+
+    transform:scale(1.12);
+
+    filter:drop-shadow(0 0 10px gold);
+
+}
+
+/* Ajusta estos valores según tu árbol */
+
+.mango1{left:170px;top:145px;}
+.mango2{left:280px;top:95px;}
+.mango3{left:400px;top:170px;}
+.mango4{left:230px;top:285px;}
+.mango5{left:390px;top:300px;}
+
+@keyframes balanceo{
+
+0%{transform:rotate(-6deg);}
+50%{transform:rotate(6deg);}
+100%{transform:rotate(-6deg);}
+
+}
+
+
+/*==================================================
+                PANEL
+==================================================*/
+
+.panel{
+
+    position:absolute;
+
+    right:70px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:420px;
+
+    color:white;
+
+    z-index:80;
+
+}
+
+#titulo{
+
+    transition:1s;
+
+}
+
+body.zoom #titulo{
+
+    opacity:0;
+
+    transform:translateY(-40px);
+
+}
+
+#mensaje{
+
+    margin-top:20px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    min-height:170px;
+
+    box-shadow:0 15px 25px rgba(0,0,0,.22);
+
+}
+
+#mensaje h2{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+#mensaje p{
+
+    line-height:1.7;
+
+    font-size:19px;
+
+}
+
+
+/*==================================================
+                BOTÓN
+==================================================*/
+
+#start{
+
+    margin-top:25px;
+
+    padding:17px 50px;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #ffe37e,
+    #ffc339);
+
+    color:#603900;
+
+    transition:.3s;
+
+    box-shadow:0 10px 22px rgba(0,0,0,.22);
+
+}
+
+#start:hover{
+
+    transform:translateY(-3px);
+
+}
+
+body.zoom #start{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/*==================================================
+            MINI PLAYER
+==================================================*/
+
+#miniPlayer{
+
+    position:absolute;
+
+    right:35px;
+
+    bottom:25px;
+
+    width:230px;
+
+    padding:12px 14px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.6s;
+
+    z-index:100;
+
+}
+
+body.zoom #miniPlayer{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+#miniPlayer button{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:white;
+
+    font-size:16px;
+
+    transition:.25s;
+
+}
+
+#miniPlayer button:hover{
+
+    transform:scale(1.08);
+
+}
+
+#musicBar{
+
+    flex:1;
+
+    height:6px;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+#progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:#ffd54a;
+
+}
+
+
+/*==================================================
+                EFECTOS
+==================================================*/
+
+.fade{
+
+    animation:fade .45s;
+
+}
+
+@keyframes fade{
+
+0%{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:1100px){
+
+.panel{
+
+width:360px;
+right:30px;
+
+}
+
+.tree-container,
+.mangos{
+
+transform:scale(.9);
+
+}
+
+}
+
+@media(max-width:850px){
+
+.panel{
+
+width:300px;
+
+}
+
+.tree-container,
+.mangos{
+
+left:-70px;
+
+transform:scale(.75);
+
+}
+
+#miniPlayer{
+
+width:200px;
+
+}
+
+}
